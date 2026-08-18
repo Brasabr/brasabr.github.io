@@ -2,55 +2,133 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#e54c14">
-  <title>Baixar BrasaBr para Android</title>
-  <link rel="icon" href="/favicon-32.png">
+  <meta name="description" content="Baixe a versão oficial mais recente do BrasaBr para Android.">
+  <title>Baixar BrasaBr 1.12.1 para Android</title>
+  <link rel="icon" href="icon-512.png">
   <style>
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:22px;background:linear-gradient(160deg,#fff7ec,#f7e4cd);color:#1a1008;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}.card{width:min(460px,100%);padding:30px 24px;border:1px solid #ebd6bf;border-radius:26px;background:#fff;box-shadow:0 18px 50px rgba(75,37,16,.14);text-align:center}.logo{width:88px;height:88px;border-radius:22px;background:#140e0a}.tag{display:inline-block;margin-top:18px;padding:5px 10px;border-radius:999px;background:#fff2e3;color:#a9320b;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.07em}h1{margin:14px 0 8px;font-size:30px;line-height:1.05}p{color:#765f4c;line-height:1.5}.spinner{width:40px;height:40px;margin:20px auto;border:4px solid #f3d6ba;border-top-color:#e54c14;border-radius:50%;animation:girar .8s linear infinite}@keyframes girar{to{transform:rotate(360deg)}}.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:50px;margin-top:12px;padding:12px 18px;border-radius:999px;background:linear-gradient(#ff6a2a,#e54c14);color:#fff;text-decoration:none;font-weight:900}.btn.alt{background:#fff;color:#1a1008;border:1px solid #ebd6bf}.small{font-size:12px}.error{color:#a9320b;font-weight:700}
+    :root{--ink:#211208;--muted:#755d49;--paper:#fffaf3;--card:#fff;--line:#ecd6bd;--ember:#e54c14;--ember2:#ff6a2a;--deep:#9e2d0c;--green:#1f7a4b;--shadow:0 24px 70px rgba(87,39,14,.16)}
+    *{box-sizing:border-box}
+    html{color-scheme:light;scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;padding:clamp(18px,4vw,46px);background:radial-gradient(circle at 16% 8%,#ffdcae 0,transparent 30%),radial-gradient(circle at 88% 84%,#ffc9a8 0,transparent 28%),linear-gradient(155deg,#fffaf3,#f4dfc6);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+    a{color:inherit}
+    .shell{width:min(1020px,100%);margin:auto}
+    .brand{display:inline-flex;align-items:center;gap:11px;margin:0 0 22px;color:var(--ink);text-decoration:none;font-size:21px;font-weight:950;letter-spacing:-.04em}
+    .brand img{width:46px;height:46px;border-radius:14px;background:#170e09;box-shadow:0 9px 22px rgba(229,76,20,.24)}
+    .brand em{color:var(--ember);font-style:normal}
+    .card{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);overflow:hidden;border:1px solid rgba(212,159,111,.55);border-radius:32px;background:rgba(255,255,255,.94);box-shadow:var(--shadow)}
+    .main{padding:clamp(26px,5vw,58px)}
+    .side{display:flex;flex-direction:column;justify-content:center;padding:clamp(25px,4vw,42px);background:linear-gradient(145deg,#2a160c,#160c07);color:#fff7ed}
+    .eyebrow{display:inline-flex;align-items:center;gap:7px;width:max-content;padding:6px 11px;border:1px solid #efb88c;border-radius:999px;background:#fff2e3;color:var(--deep);font-size:11px;font-weight:950;text-transform:uppercase;letter-spacing:.08em}
+    h1{max-width:660px;margin:17px 0 12px;font-size:clamp(36px,6.2vw,65px);line-height:.96;letter-spacing:-.065em}
+    h1 span{color:var(--ember)}
+    .lead{max-width:650px;margin:0;color:var(--muted);font-size:17px}
+    .release{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:22px 0 0}
+    .version{padding:7px 11px;border-radius:10px;background:#ffe8d1;color:var(--deep);font-size:13px;font-weight:950}
+    .verified{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-size:12px;font-weight:850}
+    .download{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:56px;margin-top:24px;padding:13px 18px;border:0;border-radius:999px;background:linear-gradient(180deg,var(--ember2),var(--ember));box-shadow:0 12px 28px rgba(229,76,20,.29);color:#fff;text-align:center;text-decoration:none;font-size:16px;font-weight:950;transition:transform .18s ease,box-shadow .18s ease}
+    .download:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(229,76,20,.34)}
+    .download:focus-visible,.minor:focus-visible,.brand:focus-visible{outline:3px solid #f2ad65;outline-offset:3px}
+    .status{display:flex;align-items:center;justify-content:center;gap:8px;min-height:24px;margin:10px 0 0;color:var(--muted);font-size:12px;text-align:center}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--ember);animation:pulse 1s ease-in-out infinite alternate}
+    .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:20px}
+    .meta div{padding:11px 8px;border:1px solid var(--line);border-radius:13px;background:var(--paper);text-align:center}
+    .meta strong{display:block;font-size:13px}.meta span{display:block;margin-top:2px;color:var(--muted);font-size:10px}
+    .side h2{margin:0 0 16px;font-size:24px;letter-spacing:-.035em}
+    .features{display:grid;gap:12px;margin:0;padding:0;list-style:none}
+    .features li{display:grid;grid-template-columns:34px 1fr;align-items:start;gap:10px}
+    .features b{display:block;font-size:13px}.features small{display:block;margin-top:1px;color:#d9c3b2;line-height:1.4}
+    .ico{display:grid;width:34px;height:34px;place-items:center;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:rgba(255,255,255,.08)}
+    .safe{margin-top:20px;padding-top:17px;border-top:1px solid rgba(255,255,255,.12);color:#ddcbbc;font-size:11px;line-height:1.55;word-break:break-word}
+    .safe b{color:#fff7ed}
+    footer{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:18px 5px 0;color:#6f5948;font-size:12px}
+    footer nav{display:flex;gap:14px;flex-wrap:wrap}footer a:hover{text-decoration:none;color:var(--ember)}
+    .minor{font-weight:800}
+    @keyframes pulse{to{opacity:.3;transform:scale(.76)}}
+    @media(max-width:760px){body{padding:15px}.brand{margin-left:4px}.card{grid-template-columns:1fr;border-radius:25px}.main,.side{padding:25px 20px}.meta{grid-template-columns:1fr 1fr}.meta div:last-child{grid-column:1/-1}h1{font-size:40px}.download{position:relative}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.dot{animation:none}.download{transition:none}}
   </style>
 </head>
 <body>
-  <main class="card">
-    <img class="logo" src="/icon-512.png" width="88" height="88" alt="BrasaBr">
-    <span class="tag">Aplicativo Android</span>
-    <h1>Preparando o APK mais recente…</h1>
-    <p id="status">Estamos localizando automaticamente a última versão publicada.</p>
-    <div class="spinner" id="spinner" aria-label="Carregando"></div>
-    <a class="btn" id="download" href="https://github.com/Brasabr/brasabr.github.io/releases/latest" hidden>⬇ Baixar APK</a>
-    <a class="btn alt" href="/">Voltar ao site</a>
-    <p class="small">O Android poderá solicitar autorização para instalar aplicativos desconhecidos.</p>
-  </main>
+  <div class="shell">
+    <a class="brand" href="index.html" aria-label="Voltar ao site do BrasaBr">
+      <img src="icon-512.png" width="46" height="46" alt="">
+      <span>Brasa<em>Br</em></span>
+    </a>
+
+    <main class="card">
+      <section class="main">
+        <span class="eyebrow">🔥 Aplicativo oficial para Android</span>
+        <h1>A chama ficou mais <span>segura.</span></h1>
+        <p class="lead">Baixe o BrasaBr 1.12.1 com denúncias, bloqueio, silenciamento, avisos internos e novas ferramentas de moderação.</p>
+
+        <div class="release">
+          <span class="version" id="version">Versão v1.12.1</span>
+          <span class="verified">✓ APK oficial verificado</span>
+        </div>
+
+        <a class="download" id="download" href="https://github.com/Brasabr/brasabr.github.io/releases/latest/download/BrasaBr-comentarios-alinhados.apk">
+          <span aria-hidden="true">⬇</span> Baixar APK para Android
+        </a>
+        <p class="status" id="status" aria-live="polite"><span class="dot" aria-hidden="true"></span> Verificando a versão mais recente…</p>
+
+        <div class="meta" aria-label="Informações do aplicativo">
+          <div><strong>≈ 21 MB</strong><span>Tamanho do APK</span></div>
+          <div><strong>Android 7+</strong><span>Versão mínima</span></div>
+          <div><strong>Atualização direta</strong><span>Mesmo pacote e assinatura</span></div>
+        </div>
+      </section>
+
+      <aside class="side" aria-label="Novidades da versão">
+        <h2>Novidades da versão</h2>
+        <ul class="features">
+          <li><span class="ico">⚑</span><span><b>Denúncias</b><small>Denuncie perfis, publicações, comentários e stories.</small></span></li>
+          <li><span class="ico">🛡️</span><span><b>Bloquear e silenciar</b><small>Controle interações e o conteúdo que aparece para você.</small></span></li>
+          <li><span class="ico">🔔</span><span><b>Avisos internos</b><small>Acompanhe o andamento das denúncias no aplicativo.</small></span></li>
+          <li><span class="ico">🔐</span><span><b>Moderação protegida</b><small>Painel administrativo sem segredo embutido no APK.</small></span></li>
+        </ul>
+        <p class="safe"><b>SHA-256 verificado</b><br>859dc781a2ca12a120e56cc8f43a56ca850b87d07e795d585b1da0d25c223bf7</p>
+      </aside>
+    </main>
+
+    <footer>
+      <span>© 2026 BrasaBr · A Rede do Brasil</span>
+      <nav aria-label="Links de suporte">
+        <a class="minor" href="privacidade.html">Privacidade</a>
+        <a class="minor" href="termos.html">Termos</a>
+        <a class="minor" href="mailto:suporte.brasabr@gmail.com">Suporte</a>
+      </nav>
+    </footer>
+  </div>
+
   <script>
     (() => {
-      const api = 'https://api.github.com/repos/Brasabr/brasabr.github.io/releases/latest';
-      const status = document.getElementById('status');
-      const spinner = document.getElementById('spinner');
+      const API = 'https://api.github.com/repos/Brasabr/brasabr.github.io/releases/latest';
+      const EXACT_NAME = 'BrasaBr-comentarios-alinhados.apk';
+      const STABLE_URL = 'https://github.com/Brasabr/brasabr.github.io/releases/latest/download/' + EXACT_NAME;
       const button = document.getElementById('download');
-      fetch(api, { headers: { Accept: 'application/vnd.github+json' }, cache: 'no-store' })
+      const status = document.getElementById('status');
+      const version = document.getElementById('version');
+      button.href = STABLE_URL;
+
+      fetch(API, { headers: { Accept: 'application/vnd.github+json' }, cache: 'no-store' })
         .then((response) => {
-          if (!response.ok) throw new Error('release indisponível');
+          if (!response.ok) throw new Error('Release indisponível');
           return response.json();
         })
         .then((release) => {
           const assets = Array.isArray(release.assets) ? release.assets : [];
-          const exact = assets.find((asset) => asset.name === 'BrasaBr-comentarios-alinhados.apk');
-          const compatible = assets.find((asset) => /^BrasaBr-comentarios-alinhados.*\.apk$/i.test(asset.name));
-          const anyApk = assets.find((asset) => /\.apk$/i.test(asset.name));
-          const apk = exact || compatible || anyApk;
-          if (!apk || !apk.browser_download_url) throw new Error('APK não encontrado');
-          status.textContent = `Versão ${release.tag_name || 'mais recente'} encontrada. O download vai começar.`;
-          button.href = apk.browser_download_url;
-          button.hidden = false;
-          spinner.hidden = true;
-          setTimeout(() => location.replace(apk.browser_download_url), 450);
+          const apk = assets.find((asset) => asset.name === EXACT_NAME);
+          if (!apk) throw new Error('APK oficial não encontrado');
+          const tag = release.tag_name || 'v1.12.1';
+          version.textContent = 'Versão ' + tag;
+          button.href = apk.browser_download_url || STABLE_URL;
+          status.textContent = 'Versão mais recente pronta para baixar.';
         })
         .catch(() => {
-          status.innerHTML = '<span class="error">Não foi possível iniciar automaticamente.</span><br>Abra a página da versão e toque no arquivo APK.';
-          button.href = 'https://github.com/Brasabr/brasabr.github.io/releases/latest';
-          button.textContent = 'Abrir página da versão';
-          button.hidden = false;
-          spinner.hidden = true;
+          status.textContent = 'Download oficial disponível pelo botão acima.';
+          button.href = STABLE_URL;
         });
     })();
   </script>
