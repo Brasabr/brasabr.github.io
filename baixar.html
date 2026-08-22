@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#e54c14">
   <meta name="description" content="Baixe a versão oficial mais recente do BrasaBr para Android.">
-  <title>Baixar BrasaBr 1.14.1 para Android</title>
+  <title>Baixar BrasaBr 1.14.2 para Android</title>
   <link rel="icon" href="icon-512.png">
   <style>
     :root{--ink:#211208;--muted:#755d49;--paper:#fffaf3;--card:#fff;--line:#ecd6bd;--ember:#e54c14;--ember2:#ff6a2a;--deep:#9e2d0c;--green:#1f7a4b;--shadow:0 24px 70px rgba(87,39,14,.16)}
@@ -61,10 +61,10 @@
       <section class="main">
         <span class="eyebrow">🔥 Aplicativo oficial para Android</span>
         <h1>A chama ficou mais <span>segura.</span></h1>
-        <p class="lead">Baixe o BrasaBr 1.14.1 com enquetes, perguntas, visualizações, destaques e rascunhos nos stories.</p>
+        <p class="lead">Baixe o BrasaBr 1.14.2 com enquetes, perguntas, visualizações, destaques e rascunhos nos stories.</p>
 
         <div class="release">
-          <span class="version" id="version">Versão v1.14.1</span>
+          <span class="version" id="version">Versão v1.14.2</span>
           <span class="verified">✓ APK oficial verificado</span>
         </div>
 
@@ -91,7 +91,7 @@
           <li><span class="ico">🔔</span><span><b>Avisos internos</b><small>Acompanhe o andamento das denúncias no aplicativo.</small></span></li>
           <li><span class="ico">🔐</span><span><b>Moderação protegida</b><small>Painel administrativo sem segredo embutido no APK.</small></span></li>
         </ul>
-        <p class="safe"><b>SHA-256 verificado</b><br>5f070a18546874ca93c36fa55643b1aa1d6e8cc376873d66f23e9301d2beb0ce</p>
+        <p class="safe"><b>SHA-256 verificado</b><br>5c0e817471bdfacca8d85a51f762b23c4b3520dbdc8b9af4bd6d9188f76750c8</p>
       </aside>
     </main>
 
@@ -124,7 +124,7 @@
           const assets = Array.isArray(release.assets) ? release.assets : [];
           const apk = assets.find((asset) => asset.name === EXACT_NAME);
           if (!apk) throw new Error('APK oficial não encontrado');
-          const tag = release.tag_name || 'v1.14.1';
+          const tag = release.tag_name || 'v1.14.2';
           version.textContent = 'Versão ' + tag;
           button.href = apk.browser_download_url || STABLE_URL;
           status.textContent = 'Versão mais recente pronta para baixar.';
