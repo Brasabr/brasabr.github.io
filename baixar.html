@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#e54c14">
   <meta name="description" content="Baixe a versão oficial mais recente do BrasaBr para Android.">
-  <title>Baixar BrasaBr 1.16.0 para Android</title>
+  <title>Baixar BrasaBr 1.16.1 para Android</title>
   <link rel="icon" href="icon-512.png">
   <style>
     :root{--ink:#211208;--muted:#755d49;--paper:#fffaf3;--card:#fff;--line:#ecd6bd;--ember:#e54c14;--ember2:#ff6a2a;--deep:#9e2d0c;--green:#1f7a4b;--shadow:0 24px 70px rgba(87,39,14,.16)}
@@ -65,11 +65,11 @@
         <p class="lead">Baixe o BrasaBr 1.15.6: você escolhe o que quer ver no feed — games, sua região, engraçados, novidades ou só quem você segue.</p>
 
         <div class="release">
-          <span class="version" id="version">Versão v1.16.0</span>
+          <span class="version" id="version">Versão v1.16.1</span>
           <span class="verified">✓ APK oficial verificado</span>
         </div>
 
-        <a class="download" id="download" href="https://github.com/Brasabr/brasabr.github.io/releases/latest/download/brasabr-1.16.0-salas.apk">
+        <a class="download" id="download" href="https://github.com/Brasabr/brasabr.github.io/releases/latest/download/brasabr-1.16.1-salas.apk">
           <span aria-hidden="true">⬇</span> Baixar APK para Android
         </a>
         <p class="status" id="status" aria-live="polite"><span class="dot" aria-hidden="true"></span> Verificando a versão mais recente…</p>
@@ -92,7 +92,7 @@
           <li><span class="ico">😜</span><span><b>Figurinhas</b><small>Figurinhas de emoji ou as suas, redondas, feitas a partir de uma foto.</small></span></li>
           <li><span class="ico">🔐</span><span><b>Microfone e câmera</b><small>Permissões liberadas dentro do app para gravar.</small></span></li>
         </ul>
-        <p class="safe"><b>SHA-256 verificado</b><br>d9b3d740e2fde4331b63de19e35245681e42fb461c184de394c04292306bf282</p>
+        <p class="safe"><b>SHA-256 verificado</b><br>cedbfd1493f1841014e4b1f67f4ef97b67ca0614f9f0de50badaafee83600714</p>
       </aside>
     </main>
 
@@ -109,7 +109,7 @@
   <script>
     (() => {
       const API = 'https://api.github.com/repos/Brasabr/brasabr.github.io/releases/latest';
-      const EXACT_NAME = 'brasabr-1.16.0-salas.apk';
+      const EXACT_NAME = 'brasabr-1.16.1-salas.apk';
       const STABLE_URL = 'https://github.com/Brasabr/brasabr.github.io/releases/latest/download/' + EXACT_NAME;
       const button = document.getElementById('download');
       const status = document.getElementById('status');
@@ -125,7 +125,7 @@
           const assets = Array.isArray(release.assets) ? release.assets : [];
           const apk = assets.find((asset) => asset.name === EXACT_NAME);
           if (!apk) throw new Error('APK oficial não encontrado');
-          const tag = release.tag_name || 'v1.16.0';
+          const tag = release.tag_name || 'v1.16.1';
           version.textContent = 'Versão ' + tag;
           button.href = apk.browser_download_url || STABLE_URL;
           status.textContent = 'Versão mais recente pronta para baixar.';
@@ -136,5 +136,5 @@
         });
     })();
   </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a317b7db3808df33',t:'MTc4Nzc5ODQ5Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a317d9a958eb1944',t:'MTc4Nzc5OTg4MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
