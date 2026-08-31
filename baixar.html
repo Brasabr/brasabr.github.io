@@ -69,7 +69,7 @@
           <span class="verified">✓ APK oficial verificado</span>
         </div>
 
-        <a class="download" id="download" href="https://github.com/Brasabr/brasabr.github.io/releases/latest/download/brasabr-1.16.5-admob.apk">
+        <a class="download" id="download" href="https://github.com/Brasabr/brasabr.github.io/releases/latest/download/brasabr-1.16.5-AUDIO-SEGURAR.apk">
           <span aria-hidden="true">⬇</span> Baixar APK para Android
         </a>
         <p class="status" id="status" aria-live="polite"><span class="dot" aria-hidden="true"></span> Verificando a versão mais recente…</p>
@@ -92,7 +92,7 @@
           <li><span class="ico">😜</span><span><b>Figurinhas</b><small>Figurinhas de emoji ou as suas, redondas, feitas a partir de uma foto.</small></span></li>
           <li><span class="ico">🔐</span><span><b>Microfone e câmera</b><small>Permissões liberadas dentro do app para gravar.</small></span></li>
         </ul>
-                     <p class="safe"><b>SHA-256 verificado</b><br>165f17a20a18dcc293b685daf3288951c070afa9c3291d6d0581639871ea19d6</p>
+                     <p class="safe"><b>SHA-256 verificado</b><br>4ffc6b97340b9d9591e2108a3817df02fe9060dcb0f459664b5df515351fff80</p>
       </aside>
     </main>
 
@@ -109,6 +109,35 @@
   <script>
     (() => {
       const API = 'https://api.github.com/repos/Brasabr/brasabr.github.io/releases/latest';
+      const EXACT_NAME = 'brasabr-1.16.5-admob.apk';
+      const STABLE_URL = 'https://github.com/Brasabr/brasabr.github.io/releases/latest/download/' + EXACT_NAME;
+      const button = document.getElementById('download');
+      const status = document.getElementById('status');
+      const version = document.getElementById('version');
+      button.href = STABLE_URL;
+
+      fetch(API, { headers: { Accept: 'application/vnd.github+json' }, cache: 'no-store' })
+        .then((response) => {
+          if (!response.ok) throw new Error('Release indisponível');
+          return response.json();
+        })
+        .then((release) => {
+          const assets = Array.isArray(release.assets) ? release.assets : [];
+          const apk = assets.find((asset) => asset.name === EXACT_NAME);
+          if (!apk) throw new Error('APK oficial não encontrado');
+          const tag = release.tag_name || 'v1.16.5';
+          version.textContent = 'Versão ' + tag;
+          button.href = apk.browser_download_url || STABLE_URL;
+          status.textContent = 'Versão mais recente pronta para baixar.';
+        })
+        .catch(() => {
+          status.textContent = 'Download oficial disponível pelo botão acima.';
+          button.href = STABLE_URL;
+        });
+    })();
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a31f270e1e77de17',t:'MTc4Nzg3NjQ1MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a334f9ff9b21d97a',t:'MTc4ODEwNTI5Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a338134e6b260a7a',t:'MTc4ODEzNzc4Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
       const EXACT_NAME = 'brasabr-1.16.5-admob.apk';
       const STABLE_URL = 'https://github.com/Brasabr/brasabr.github.io/releases/latest/download/' + EXACT_NAME;
       const button = document.getElementById('download');
