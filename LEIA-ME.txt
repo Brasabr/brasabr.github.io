@@ -1,0 +1,30 @@
+BrasaBr — páginas atualizadas
+=============================
+
+O que mudou em TODAS as páginas:
+  * Rodapé com: Desenvolvido por Eric Silva Barbosa
+  * Botão do Instagram  -> https://instagram.com/ericsbarbosa1
+  * Botão do WhatsApp   -> https://wa.me/5575988760022  (mostra (75) 98876-0022)
+
+Arquivos (8):
+  index.html
+  baixar.html            <- tambem atualiza o link e o hash do APK 1.16.5
+  suporte.html
+  termos.html
+  privacidade.html
+  diretrizes.html
+  excluir-conta.html
+  404.html
+
+COMO PUBLICAR (GitHub)
+----------------------
+1. Abra https://github.com/Brasabr/brasabr.github.io
+2. Clique no arquivo .html -> clique no LAPIS (Edit)
+3. Apague tudo (Ctrl+A + Delete) e cole o conteudo do arquivo deste zip
+4. "Commit changes"
+5. Repita para os 8 arquivos
+
+IMPORTANTE: use o lapis, nao o "Upload files".
+Pelo upload o GitHub cria copias como index(1).html e o site nao muda.
+
+Obs.: o CSS (style.css) nao precisa ser enviado, nao foi alterado.
