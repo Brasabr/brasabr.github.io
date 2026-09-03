@@ -69,7 +69,7 @@
           <span class="verified">✓ APK oficial verificado</span>
         </div>
 
-        <a class="download" id="download" href="https://github.com/Brasabr/brasabr.github.io/releases/latest/download/brasabr-1.16.5-admob.apk">
+        <a class="download" id="download" href="https://github.com/Brasabr/brasabr.github.io/releases/latest/download/brasabr-1.16.5-foto-vai.apk">
           <span aria-hidden="true">⬇</span> Baixar APK para Android
         </a>
         <p class="status" id="status" aria-live="polite"><span class="dot" aria-hidden="true"></span> Verificando a versão mais recente…</p>
@@ -92,7 +92,7 @@
           <li><span class="ico">😜</span><span><b>Figurinhas</b><small>Figurinhas de emoji ou as suas, redondas, feitas a partir de uma foto.</small></span></li>
           <li><span class="ico">🔐</span><span><b>Microfone e câmera</b><small>Permissões liberadas dentro do app para gravar.</small></span></li>
         </ul>
-                     <p class="safe"><b>SHA-256 verificado</b><br>e1507e6a74765fa3f4a2e4c3e44a65fe7e0ff0b54fc8fc16980bcb5b9cecc5e9</p>
+                     <p class="safe"><b>SHA-256 verificado</b><br>179c322903f529d2e095da859da2f77f6e009fd7d43cca85e8d5f805d5731687</p>
       </aside>
     </main>
 
@@ -109,7 +109,8 @@
   <script>
     (() => {
       const API = 'https://api.github.com/repos/Brasabr/brasabr.github.io/releases/latest';
-      const EXACT_NAME = 'brasabr-1.16.5-admob.apk';
+      const ASSET_NAMES = ['brasabr-1.16.5-foto-vai.apk', 'brasabr-1.16.5-admob.apk'];
+      const EXACT_NAME = ASSET_NAMES[0];
       const STABLE_URL = 'https://github.com/Brasabr/brasabr.github.io/releases/latest/download/' + EXACT_NAME;
       const button = document.getElementById('download');
       const status = document.getElementById('status');
@@ -123,7 +124,7 @@
         })
         .then((release) => {
           const assets = Array.isArray(release.assets) ? release.assets : [];
-          const apk = assets.find((asset) => asset.name === EXACT_NAME);
+          const apk = ASSET_NAMES.map((name) => assets.find((asset) => asset.name === name)).find(Boolean) || assets.find((asset) => /\.apk$/i.test(asset.name));
           if (!apk) throw new Error('APK oficial não encontrado');
           const tag = release.tag_name || 'v1.16.5';
           version.textContent = 'Versão ' + tag;
