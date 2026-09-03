@@ -69,7 +69,7 @@
           <span class="verified">✓ APK oficial verificado</span>
         </div>
 
-        <a class="download" id="download" href="https://github.com/Brasabr/brasabr.github.io/releases/latest/download/brasabr-1.16.5-foto-vai.apk">
+        <a class="download" id="download" href="https://github.com/Brasabr/brasabr.github.io/releases/latest/download/brasabr-1.16.5-admob.apk">
           <span aria-hidden="true">⬇</span> Baixar APK para Android
         </a>
         <p class="status" id="status" aria-live="polite"><span class="dot" aria-hidden="true"></span> Verificando a versão mais recente…</p>
@@ -109,9 +109,10 @@
   <script>
     (() => {
       const API = 'https://api.github.com/repos/Brasabr/brasabr.github.io/releases/latest';
-      const ASSET_NAMES = ['brasabr-1.16.5-foto-vai.apk', 'brasabr-1.16.5-admob.apk'];
+      const ASSET_NAMES = ['brasabr-1.16.5-admob.apk', 'brasabr-1.16.5-foto-vai.apk'];
       const EXACT_NAME = ASSET_NAMES[0];
       const STABLE_URL = 'https://github.com/Brasabr/brasabr.github.io/releases/latest/download/' + EXACT_NAME;
+      const RELEASE_PAGE = 'https://github.com/Brasabr/brasabr.github.io/releases/latest';
       const button = document.getElementById('download');
       const status = document.getElementById('status');
       const version = document.getElementById('version');
@@ -132,8 +133,8 @@
           status.textContent = 'Versão mais recente pronta para baixar.';
         })
         .catch(() => {
-          status.textContent = 'Download oficial disponível pelo botão acima.';
-          button.href = STABLE_URL;
+          status.textContent = 'Não consegui falar com o GitHub agora. O botão abre a página da versão mais recente.';
+          button.href = RELEASE_PAGE;
         });
     })();
   </script>
