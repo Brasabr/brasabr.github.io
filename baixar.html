@@ -92,7 +92,7 @@
           <li><span class="ico">😜</span><span><b>Figurinhas</b><small>Figurinhas de emoji ou as suas, redondas, feitas a partir de uma foto.</small></span></li>
           <li><span class="ico">🔐</span><span><b>Microfone e câmera</b><small>Permissões liberadas dentro do app para gravar.</small></span></li>
         </ul>
-                     <p class="safe"><b>SHA-256 verificado</b><br>165f17a20a18dcc293b685daf3288951c070afa9c3291d6d0581639871ea19d6</p>
+                     <p class="safe"><b>SHA-256 verificado</b><br>c5d0bae70ee6a5783d3cc261e3bb8be67b0804baf1b008a5b24973b4e5222ddc</p>
       </aside>
     </main>
 
@@ -109,10 +109,8 @@
   <script>
     (() => {
       const API = 'https://api.github.com/repos/Brasabr/brasabr.github.io/releases/latest';
-      const ASSET_NAMES = ['brasabr-1.16.5-admob.apk', 'brasabr-1.16.5-foto-vai.apk'];
-      const EXACT_NAME = ASSET_NAMES[0];
+      const EXACT_NAME = 'brasabr-1.16.5-admob.apk';
       const STABLE_URL = 'https://github.com/Brasabr/brasabr.github.io/releases/latest/download/' + EXACT_NAME;
-      const RELEASE_PAGE = 'https://github.com/Brasabr/brasabr.github.io/releases/latest';
       const button = document.getElementById('download');
       const status = document.getElementById('status');
       const version = document.getElementById('version');
@@ -125,7 +123,7 @@
         })
         .then((release) => {
           const assets = Array.isArray(release.assets) ? release.assets : [];
-          const apk = ASSET_NAMES.map((name) => assets.find((asset) => asset.name === name)).find(Boolean) || assets.find((asset) => /\.apk$/i.test(asset.name));
+          const apk = assets.find((asset) => asset.name === EXACT_NAME);
           if (!apk) throw new Error('APK oficial não encontrado');
           const tag = release.tag_name || 'v1.16.5';
           version.textContent = 'Versão ' + tag;
@@ -133,8 +131,8 @@
           status.textContent = 'Versão mais recente pronta para baixar.';
         })
         .catch(() => {
-          status.textContent = 'Não consegui falar com o GitHub agora. O botão abre a página da versão mais recente.';
-          button.href = RELEASE_PAGE;
+          status.textContent = 'Download oficial disponível pelo botão acima.';
+          button.href = STABLE_URL;
         });
     })();
   </script>
